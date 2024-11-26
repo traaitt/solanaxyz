@@ -381,7 +381,7 @@ def attach_to_chrome(debugger_address="127.0.0.1:9222"):
 def fetch_new_pairs(driver):
     try:
         with tqdm(total=100, desc="Fetching pairs", unit=" token", dynamic_ncols=True) as pbar:
-            driver.get("https://dexscreener.com/?rankBy=trendingScoreH6&order=desc&minLiq=50000&minMarketCap=32000&maxMarketCap=50000000&minFdv=80000&maxAge=24&min24HTxns=2000&max5MSells=60&min24HVol=50000&min5MVol=10000")
+            driver.get("https://dexscreener.com/solana?rankBy=trendingScoreM5&order=desc")
             time.sleep(5)  # Allow page to load
             elements = driver.find_elements(By.CSS_SELECTOR, "a[href*='solana/']")
             token_addresses = [el.get_attribute("href").split("solana/")[-1] for el in elements[:100]]
