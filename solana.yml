@@ -1,0 +1,13 @@
+name: solana
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9  # Adjust the Python version as needed
+  - pip
+  - pip:
+    - selenium==4.15.2
+    - webdriver_manager==3.8.6  # For managing WebDriver binaries if needed
+    - requests==2.31.0
+    - colorama==0.4.6
+    - solana==0.28.2  # Ensure this matches your Solana SDK version
+    - tqdm==4.66.1
